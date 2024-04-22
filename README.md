@@ -8,7 +8,7 @@ https://data.world/wfp/6ca04cee-665a-4037-b04e-b94a8b2cdef9/workspace/file?filen
 Nota: No se ha podido completar debido a que he intentado realizarlo con Tableau pero como nunca lo he utilizado no he podido resolver los problemas 
 que me han hido saliendo durante la realización. 
 
-## Correlaction Matrices: 
+## Matriz de correlación: 
 ### Fuente de datos: 
 https://data.world/city-of-ny/uedp-fegm 
 ### Tema: 
