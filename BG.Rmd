@@ -1,0 +1,61 @@
+
+cargar el fichero de datos. 
+
+```{r}
+path = 'accident.CSV'
+accidentData <- read.csv(path, row.names=NULL)
+```
+
+ 
+### Exploración del conjunto de datos 
+ 
+Verificamos la estructura del juego de datos principal. Vemos el número de columnas 
+que tenemos y ejemplos de los contenidos de las filas.
+
+```{r} 
+structure = str(accidentData) 
+``` 
+
+Calcular el número de muertes por estado
+
+```{r echo=TRUE, message=FALSE, warning=FALSE} 
+
+library(ggplot2)
+
+xstat <- aggregate(FATALS ~ STATENAME, data = accidentData, FUN = sum)
+xstat <- xstat[order(xstat$FATALS, decreasing = TRUE), ]
+
+bgraphs <- ggplot(xstat, aes(x = reorder(STATENAME, -FATALS), y = FATALS)) +
+  geom_bar(stat = "identity", fill = "skyblue") +
+  labs(title = "Número de Muertes en Accidentes de Tráfico por Estado",
+       x = "Estado",
+       y = "Número de Muertes") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  coord_cartesian(ylim = c(0, max(xstat$FATALS) * 1.1))
+
+options(repr.plot.width=12, repr.plot.height=6)
+print(bgraphs)
+ 
+```
+
+Calcular el número de accidentes por día de la semana
+ 
+```{r echo=TRUE, message=FALSE, warning=FALSE} 
+
+library(ggplot2)
+
+xday <- aggregate(VE_TOTAL ~ DAYNAME, data = accidentData, FUN = sum)
+xday <- xday[order(xday$VE_TOTAL, decreasing = TRUE), ]
+
+bar_plot <- ggplot(xday, aes(x = reorder(factor(DAYNAME), -VE_TOTAL), y = VE_TOTAL)) +
+  geom_bar(stat = "identity", fill = "lightgreen") +
+  labs(title = "Número de Accidentes de Tráfico por Día de la Semana",
+       x = "Día de la Semana",
+       y = "Número de Accidentes") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  coord_cartesian(ylim = c(0, max(xday$VE_TOTAL) * 1.1))
+
+print(bar_plot)
+ 
+```
+
