@@ -2,7 +2,8 @@
 Visualizaciones basadas en Sanky Diagrams, Correlation Matrices y Bullet Graphs
 
 ## Diagrama de Sankey: 
-### Fuente de datos: https://data.world/wfp/6ca04cee-665a-4037-b04e-b94a8b2cdef9/workspace/file?filename=algeria-food-prices-1.csv 
+### Fuente de datos: 
+https://data.world/wfp/6ca04cee-665a-4037-b04e-b94a8b2cdef9/workspace/file?filename=algeria-food-prices-1.csv 
 ### Tema: Estudiar la relacion entre el grupo de alementos, los diferentes alimentos y su precio.
 Nota: No se ha podido completar debido a que he intentado realizarlo con Tableau pero como nunca lo he utilizado no he podido resolver los problemas 
 que me han hido saliendo durante la realización. 
